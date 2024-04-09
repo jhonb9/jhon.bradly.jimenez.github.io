@@ -1,0 +1,94 @@
+---
+title: "index"
+author: "J.B"
+date: "2024-04-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solucion práctica  4 GRACIAS POR LEER ESTO :)
+```{r}
+PLOT(1:10)
+HLOAAAA
+
+```
+
+# Problema 3
+
+
+#FUNCIÓN DE MASA
+
+x<-1:50
+f<-dpois(x,25)
+plot(x,f,col="red",type="h")
+dpois(20,25)
+points(x,f,pch="16",col="red")
+
+
+
+
+
+ppois(19,25,lower.tail=F) # (X>=20)=1-P(x<=19)
+1-ppois(19,25,lower.tail=T) 
+
+
+# FUNCIÓN DE DISTRIBUCIÓN
+
+
+F<-ppois(x,25)
+plot(x,F,type="s")
+
+
+
+
+
+# a)
+
+
+ppois(15,lambda = 25, lower.tail=T)
+
+
+
+# b)
+
+# Probabibilidad minimo de que pase como mínimo 0,052  ALMENOS!!  
+
+1-pexp(0.052,25)
+pexp(0.052,25,lower.tail=F)
+
+# La función de densidad exponecial
+
+curve(dexp,25)
+
+# La función de distribución exponencial 
+
+curve(pexp,25, xlim=c(0,1),ylim=c(0,1))
+curve(pexp,25)
+
+
+
+qexp(0.5,25)
+
+
+
+
+# c)
+
+# Simulación entre dos tiempos de espera
+
+simul<-rexp(500000,25)
+hist(simul)
+
+mean(simul)
+
+
+# el valor teórico
+
+
+set.seed(12)
+mean(rexp(500000,rate=25))
+
+
